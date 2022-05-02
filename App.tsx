@@ -3,7 +3,7 @@ import DataGrid from './DataGrid'
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
-
+'var global = typeof self !== undefined ? self : this;'
 // const rowData = [
 //     { make: "Toyota", model: "Celica", price: 35000 },
 //     { make: "Ford", model: "Mondeo", price: 32000 },
