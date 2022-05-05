@@ -1,0 +1,52 @@
+import React, { useState } from 'react';
+import { AgGridColumn, AgGridReact } from 'ag-grid-react';
+
+interface MyProps {
+    rowData?: any,
+    columnDefs?: any
+}
+
+class DataGrid extends React.Component<MyProps>{
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            rowData: [],
+            columnDefs: [],
+        }
+    }
+
+    // componentDidMount() {
+    //     this.setState({
+    //         rowData: this.props.rowData
+    //     })
+    // }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (prevState.rowData !== nextProps.rowData || prevState.columnDefs !== nextProps.columnDefs) {
+            return { rowData: nextProps.rowData, columnDefs: nextProps.columnDefs };
+        }
+        return null;
+    }
+
+    render() {
+        const { rowData, columnDefs } = this.state;
+        const go = {
+            rowData,
+            columnDefs
+        }
+        return (
+            <div
+                className="ag-theme-balham"
+                style={{ height: '200px', width: '600px' }}
+            >
+                <AgGridReact
+                    rowData={this.state.rowData} columnDefs={this.state.columnDefs}
+                    // gridOptions={{...go}}
+                    />
+            </div >
+        );
+    }
+};
+
+export default DataGrid;
