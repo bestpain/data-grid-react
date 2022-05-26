@@ -78,3 +78,42 @@ it('component should match the row value', () => {
 
 it('total number of rows')
 it('nth row should match this')
+
+
+describe("if tree data", () => {
+  beforeEach((done) => {
+    component = mount(<DataGrid config={tesdData.config} />);
+    agGridReact = component.find(AgGridReact).instance();
+    ensureGridApiHasBeenSet(component).then(
+      () => done(),
+      () => fail("Grid API not set within expected time limits")
+    );
+  });
+  if (tesdData.config.extraSettings.treeData) {
+    it("show tree", () => {
+      expect(
+        component.render().find(".ag-icon-tree-open").length
+      ).toBeGreaterThanOrEqual(1);
+    });
+    it("header name", () => {
+      let { headerName = "Group" } =
+        tesdData.config.extraSettings.groupColumnDef;
+      expect(
+        component.render().find(".ag-header-cell-text").first().text()
+      ).toBe(headerName);
+    });
+    if (!tesdData.config.extraSettings.hierarchy) {
+      it("should not render tree if hierachy value is empty", () => {
+        expect(
+          component.render().find(".ag-icon-tree-open").length
+        ).toBeFalsy();
+      });
+    }
+    it("should have the correct min height", () => {
+      let { minHeight = "" } = tesdData.config.extraSettings.gridOption;
+      expect(
+        component.find(".container.ag-theme-balham").prop("style")
+      ).toHaveProperty("minHeight", minHeight);
+    });
+  }
+});
