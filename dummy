@@ -1,0 +1,26 @@
+it("Sorts by Price: ascending", () => {
+  const sortedAscTestData = tesdData1.config.extraSettings.rowData.sort(
+    (a, b) => a.price - b.price
+  );
+  agGridReact.columnApi.applyColumnState({
+    state: [{ colId: "price", sort: "asc" }],
+    defaultState: { sort: null },
+  });
+  agGridReact.api.forEachNodeAfterFilterAndSort((node, ind) => {
+    expect(node.data.price).toEqual(sortedAscTestData[ind].price);
+  });
+  
+  });
+
+it("Sorts by Price: descending", () => {
+  const sortedDescTestData = tesdData1.config.extraSettings.rowData
+    .sort((a, b) => a.price - b.price)
+    .reverse();
+  agGridReact.columnApi.applyColumnState({
+    state: [{ colId: "price", sort: "desc" }],
+    defaultState: { sort: null },
+  });
+
+  agGridReact.api.forEachNodeAfterFilterAndSort((node, ind) => {
+    expect(node.data.price).toEqual(sortedDescTestData[ind].price);
+  });
