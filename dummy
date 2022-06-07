@@ -24,3 +24,21 @@ it("Sorts by Price: descending", () => {
   agGridReact.api.forEachNodeAfterFilterAndSort((node, ind) => {
     expect(node.data.price).toEqual(sortedDescTestData[ind].price);
   });
+  
+  it("should have sorting when sort is enabled", () => {
+  expect(
+    component.render().find(".ag-header-cell-sorted-none").length
+  ).toBeGreaterThanOrEqual(1);
+});
+
+it("should have filter when filtering is enabled", () => {
+  expect(
+    component.render().find(".ag-filter-wrapper").length
+  ).toBeGreaterThanOrEqual(1);
+});
+
+it("should have pagination when pagination is enabled", () => {
+  expect(
+    component.render().find(".ag-icon-filter").length
+  ).toBeGreaterThanOrEqual(1);
+});
