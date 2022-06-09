@@ -42,3 +42,34 @@ it("should have pagination when pagination is enabled", () => {
     component.render().find(".ag-icon-filter").length
   ).toBeGreaterThanOrEqual(1);
 });
+
+
+
+
+
+...................
+
+it("should have sorting when sort is enabled", () => {
+  expect(
+    component.render().find(".ag-header-cell-sorted-none").length
+  ).toBeGreaterThanOrEqual(1);
+});
+
+it("should have filter when filtering is enabled", () => {
+  expect(
+    component.render().find(".ag-filter-icon").length
+  ).toBeGreaterThanOrEqual(1);
+});
+
+it("should have pagination when pagination is enabled", () => {
+  expect(
+    component.render().find(".ag-paging-number").first().text()
+  ).toEqual("1");
+});
+
+it("should have pages depending upon page size defined", () => {
+  expect(
+    component.render().find(".ag-paging-number").last().text()
+  ).toEqual("3");
+});
+
