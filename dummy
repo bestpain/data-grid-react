@@ -73,3 +73,79 @@ it("should have pages depending upon page size defined", () => {
   ).toEqual("3");
 });
 
+
+export const tesdData1 = {
+  config: {
+    extraSettings: {
+      rowData: [
+        {
+          athlete: "Michael Phelps",
+          age: 23,
+          country: "United States",
+          year: 2008,
+          date: "2019/12/1",
+          sport: "Swimming",
+          gold: 8,
+          silver: 0,
+          bronze: 0,
+          total: 8,
+        },
+        {
+          athlete: "Michael Phelps",
+          age: 19,
+          country: "United States",
+          year: 2004,
+          date: "2020/12/1",
+          sport: "Swimming",
+          gold: 6,
+          silver: 0,
+          bronze: 2,
+          total: 8,
+        },
+        {
+          athlete: "Michael Phelps",
+          age: 27,
+          country: "United States",
+          year: 2012,
+          date: "2021/12/1",
+          sport: "Swimming",
+          gold: 4,
+          silver: 2,
+          bronze: 0,
+          total: 6,
+        },
+      ],
+      columnDefs: [
+        { field: "athlete" },
+        {
+          field: "date",
+          filter: "agDateColumnFilter",
+          sortable: true,
+          // valueFormatter:  (params) => {
+          //   console.log(new Date(params.value),params);
+          //   return params.data.date
+          //   // return new Date(params.value)
+          // },
+          // valueGetter: (params) => {
+          //   console.log(new Date(params.data.date),params.data);
+          //   // return params.data.date
+          //   return new Date(params.data.date);
+          // },
+          valueGetter: "new Date(data.date)",
+          valueFormatter: "data.date",
+        },
+        { field: "total", filter: false },
+      ],
+      gridOption: {
+        minHeight: "",
+        pagination: true,
+      },
+      // treeData: false,
+      // hierarchy: "orgHierarchy",
+      // groupColumnDef: {
+      //   headerName: "check",
+      // },
+    },
+  },
+};
+
