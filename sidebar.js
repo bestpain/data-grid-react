@@ -115,3 +115,54 @@ const App = () => {
 render(<App />, document.getElementById('root'));
 
 
+
+
+
+
+Sidebar
+
+In sidebar Pallete there are two options column panel and filter panel.
+
+Columns Tool Panel
+The columns tool panel provides functions for managing the grid's columns.
+
+Tool Panel configuration options:
+suppress Row Groups
+Suppress Row Groups section
+	
+suppress Values	
+Suppress Values section
+
+suppress Pivots	
+Suppress Column Labels (Pivot) section
+	
+suppress Pivot Mode	
+Suppress Pivot Mode selection
+	
+suppress Column Filter	
+Suppress Column Filter section
+	
+suppress Column Select All	
+Suppress Select / Un-select all widget
+	
+suppress Column Expand All	
+Suppress Expand / Collapse all widget 
+
+
+
+
+
+
+
+
+Filters Tool Panel
+The Filters Tool Panel allows accessing the grid's filters without needing to open up the column menu.
+
+suppressExpandAll	
+To suppress Expand / Collapse All
+	
+suppressFilterSearch	
+To suppress the Filter Search
+	
+suppressSyncLayoutWithGrid	
+Suppress updating the layout of columns as they are rearranged in the grid 
