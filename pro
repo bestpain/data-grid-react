@@ -19,3 +19,7 @@ curl -X POST \
 
 
 https://34.201.81.34:443/olympicWinners
+
+
+
+{"startRow":30,"endRow":40,"rowGroupCols":[],"valueCols":[],"pivotCols":[],"pivotMode":false,"groupKeys":[],"filterModel":{},"sortModel":[]}
