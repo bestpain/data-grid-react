@@ -40,3 +40,9 @@ curl -X POST -k  'https://34.201.81.34:443/olympicWinners'  --header 'Host: ag-g
   "filterModel": {},
   "sortModel": []
 }'
+
+
+
+labs.play-with-docker.com
+curl -fsSL https://raw.githubusercontent.com/developer-by-choice/ag-grid-server/docker/start.sh | bash
+
