@@ -46,3 +46,4 @@ curl -X POST -k  'https://34.201.81.34:443/olympicWinners'  --header 'Host: ag-g
 labs.play-with-docker.com
 curl -fsSL https://raw.githubusercontent.com/developer-by-choice/ag-grid-server/docker/start.sh | bash
 
+http://ip172-18-0-129-ccdfdv5d48eg00fcmegg-443.direct.labs.play-with-docker.com/
